@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="grade_monitoringModelStoreContainer" CdmEntityContainer="grade_monitoringEntities">
+    <EntitySetMapping Name="course_info">
+      <EntityTypeMapping TypeName="grade_monitoringModel.course_info">
+        <MappingFragment StoreEntitySet="course_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_description" ColumnName="course_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="faculty_subject">
+      <EntityTypeMapping TypeName="grade_monitoringModel.faculty_subject">
+        <MappingFragment StoreEntitySet="faculty_subject">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="faculty_table">
+      <EntityTypeMapping TypeName="grade_monitoringModel.faculty_table">
+        <MappingFragment StoreEntitySet="faculty_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="faculty_username" ColumnName="faculty_username" />
+          <ScalarProperty Name="faculty_password" ColumnName="faculty_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_block">
+      <EntityTypeMapping TypeName="grade_monitoringModel.student_block">
+        <MappingFragment StoreEntitySet="student_block">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stud_block_name" ColumnName="stud_block_name" />
+          <ScalarProperty Name="year_lvl" ColumnName="year_lvl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_info">
+      <EntityTypeMapping TypeName="grade_monitoringModel.student_info">
+        <MappingFragment StoreEntitySet="student_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="student_block" ColumnName="student_block" />
+          <ScalarProperty Name="stud_username" ColumnName="stud_username" />
+          <ScalarProperty Name="stud_password" ColumnName="stud_password" />
+          <ScalarProperty Name="year_lvl" ColumnName="year_lvl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_subject">
+      <EntityTypeMapping TypeName="grade_monitoringModel.student_subject">
+        <MappingFragment StoreEntitySet="student_subject">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subject_code" ColumnName="subject_code" />
+          <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+          <ScalarProperty Name="year_level" ColumnName="year_level" />
+          <ScalarProperty Name="subject_unit" ColumnName="subject_unit" />
+          <ScalarProperty Name="per_sem" ColumnName="per_sem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Admin">
+      <EntityTypeMapping TypeName="grade_monitoringModel.tbl_Admin">
+        <MappingFragment StoreEntitySet="tbl_Admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="admin_username" ColumnName="admin_username" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_student_subject">
+      <EntityTypeMapping TypeName="grade_monitoringModel.tbl_student_subject">
+        <MappingFragment StoreEntitySet="tbl_student_subject">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_student_grade">
+      <EntityTypeMapping TypeName="grade_monitoringModel.tbl_student_grade">
+        <MappingFragment StoreEntitySet="tbl_student_grade">
+          <ScalarProperty Name="final_result" ColumnName="final_result" />
+          <ScalarProperty Name="second_sem" ColumnName="second_sem" />
+          <ScalarProperty Name="first_sem" ColumnName="first_sem" />
+          <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

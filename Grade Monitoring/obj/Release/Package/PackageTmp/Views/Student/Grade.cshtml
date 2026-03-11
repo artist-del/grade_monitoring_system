@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Grade";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<div class="vh-100 mt-4">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <button class="btn btn-primary btn-sm mb-3" id="gradePrint">Print</button>
+            <h5 class="text-center mb-4" style="background-color: #090b68; padding: 5px; color: white;"><b>Student Grade Information</b></h5>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="studentGradeDataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th colspan="6" class="text-center">Romblon State University Cajidiocan Campus</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Full Name: @Session["fullName"]</th>
+                            <th colspan="3" id="showDate">Date: </th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Student Block: @Session["studentBlock"]</th>
+                            <th colspan="3">Year Level: @Session["yearLvl"]</th>
+                        </tr>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Mid</th>
+                            <th>Final</th>
+                            <th>Final Result</th>
+                            <th>Remark</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>First Semister</th>
+                            <th>Second Semister</th>
+                            <th>Final</th>
+                            <th>Remark</th>
+                        </tr>
+                    </tfoot>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

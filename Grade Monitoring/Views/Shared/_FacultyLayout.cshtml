@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Faculty-@ViewBag.title</title>
+    <!-- Custom fonts for this template-->
+    <link rel="icon" type="image/x-icon" href="~/App_File/Image/logo.png" />
+    <link href="~/Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="~/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <style>
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -80px;
+        }
+
+            .loading-wrapper img {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 10px;
+            }
+    </style>
+
+    <!---Loading-->
+    <div class="loading-container">
+        <div class="loading-wrapper">
+            <img src="~/App_File/Image/gear.gif" />
+            <i style="margin: -30px;">Please wait while we setting up for you. . .</i>
+        </div>
+    </div>
+
+    <!--Modal for adding block-->
+    <div class="modal fade" tabindex="1" id="addYearBlock">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#addYearBlock').modal('hide')">&times;</button>
+                    <h4 class="text-center">Add Year & Block</h4>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Year level</label>
+                            <select class="form-control" name="year_lvl" id="year_lvl">
+                                <option>--Select Year Level--</option>
+                                <option value="First Year">First Year</option>
+                                <option value="Second Year">Second Year</option>
+                                <option value="Third Year">Third Year</option>
+                                <option value="Fourth Year">Fourth Year</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Block</label>
+                            <input type="text" class="form-control" name="stud_block_name" placeholder="Block-A" id="studBlock" value="Block-A"/>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-info" id="yearBlockSave">Save</button>
+                        </div>
+
+                        <div class="form-group">
+                            <div id="loadingSave" style="display: none;">
+                                <img src="~/App_File/Image/gear.gif" height="50" width="50" class="text-center" />
+                                <i>Please wait...</i>
+                            </div>
+                            <div class="alert alert-info" id="saveSuccess" style="display: none;">Successfull Save!</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index","Faculty")">
+                <div class="sidebar-brand-icon">
+                    <img src="~/App_File/Image/logo.png" class="img-fluid" height="50" width="50"/>
+                </div>
+                <div class="sidebar-brand-text mx-3">RSU-CC</div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index","Faculty")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                BSIT-Year Level
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <!--Modal for Add year level and block-->
+            <li class="nav-item">
+                <button class="nav-link btn btn-sm" style="background-color: transparent;" onclick="$('#addYearBlock').modal({ backdrop: 'static', keyboard: false }); $('#addYearBlock').modal('show')"><i class="fas fa-fw fa-plus"> </i> Add Year & Block</button>
+            </li>
+
+            <!--First Year-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#firstYear"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>First Year</span>
+                </a>
+                <div id="firstYear" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded" id="blockList">
+                        
+                    </div>
+                </div>
+            </li>
+
+            <!---Second Year-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#secondYear"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Second Year</span>
+                </a>
+                <div id="secondYear" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded" id="blockList1">
+                        
+                    </div>
+                </div>
+            </li>
+
+            <!--Third Year-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#thirdYear"
+                   aria-expanded="true" aria-controls="collapseTwo" onclick="clickBlock('Thirst Year')">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Third Year</span>
+                </a>
+                <div id="thirdYear" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded" id="blockList2">
+                        
+                    </div>
+                </div>
+            </li>
+
+            <!--Fourth Year-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#fourthYear"
+                   aria-expanded="true" aria-controls="collapseTwo" onclick="clickBlock('Fourth Year')">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Fourth Year</span>
+                </a>
+                <div id="fourthYear" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded" id="blockList3">
+                       
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Student & Subject
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a href="@Url.Action("StudentInfo", "Faculty")" class="nav-link btn btn-sm"><i class="fas fa-fw fa-list"> </i> Show Student List</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Subject", "Faculty")" class="nav-link btn btn-sm"><i class="fas fa-fw fa-list"> </i>Subject</a>
+            </li>
+            @if (Session["AdminId"] != null)
+            {
+                <li class="nav-item">
+                    <a href="@Url.Action("FacultyList","Admin")" class="nav-link btn btn-sm"><i class="fas fa-fw fa-list"> </i>Faculty List</a>
+                </li>
+            }
+            <!-- Nav Item - Charts -->
+  
+            <!-- Nav Item - Tables -->
+        
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block"/>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+            <!-- Sidebar Message -->
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">RSU Faculty</span>
+                                <img class="img-profile rounded-circle"
+                                     src="~/Admin/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Romblon State University Cajidiocan-Campus</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="@Url.Action("Logout","Faculty")">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Admin/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="~/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Admin/js/demo/datatables-demo.js"></script>
+    <script src="~/Admin/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Admin/js/demo/chart-area-demo.js"></script>
+    <script src="~/Admin/js/demo/chart-pie-demo.js"></script>
+    <script src="~/Scripts/Faculty/showStudentInfoList.js"></script>
+    <script src="~/Scripts/Faculty/crudOperation.js"></script>
+    <script src="~/Scripts/Faculty/subject.js"></script>
+    <script src="~/Scripts/Admin/facultyCRUD.js"></script>
+    <script>
+        loadingScreen();
+        function loadingScreen() {
+            window.addEventListener('load', () => {
+                document.querySelector('.loading-container').style.display = 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content pre-scrollable">
+
+            <!-- Modal Header -->
+            <div class="modal-header"><button type="button" class="close btn btn-default" id="closeModal">&times;</button>RSU Vision & Mission</div>
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <h3>Vision</h3>
+                <br />
+                <p>A research-based academic institution committed to excellence and service in nurturing globally competitive workforce towards sustainable development.</p>
+                <br />
+                <br />
+                <h3>Mission</h3>
+                <br />
+                <p>Romblon State University shall nurture an academic environment that provides advanced education, higher technological and professional instruction and technical expertise in agriculture and fisheries, forestry, engineering and technology, education, humanities, sciences and other relevant fields of study and collaborate with other institutions and communities through responsive, relevant and research-based extension services.</p>
+            </div>
+
+            <!-- Modal footer -->
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row h-100 mb-4 align-items-center justify-content-center">
+    <div class="col-lg-6 mb-4 animate__animated animate__fadeInLeft">
+        <h2>Grade Monitoring System</h2>
+        <p class="card-text">
+            Discover our user-friendly Grade Monitoring System designed for Romblon State University. It ensures seamless academic progress tracking for students and faculty alike.
+            Join us in embracing technology for efficient grade management and valuable insights.
+        </p>
+        <a href="#explore" style="border-radius: 20px;
+                                text-decoration: none;
+	                            border: 1px solid #0ac213;
+	                            background-color: #0ac213;
+	                            color: #FFFFFF;
+	                            font-size: 12px;
+	                            font-weight: bold;
+	                            padding: 10px 15px;
+	                            letter-spacing: 1px;
+	                            text-transform: uppercase;
+	                            transition: transform 80ms ease-in;">
+            Explore
+        </a>
+    </div>
+
+    <div class="col-lg-6 mb-4 d-none d-lg-block animate__animated animate__fadeInRight"> 
+            @*<img src="~/App_File/Image/image2.jpg" class="img-fluid" />*@
+            <img src="~/App_File/Image/facultyLogo.png" class="img-fluid"/>
+       
+    </div>
+</div>
+
+
+<div class="h-100" id="explore">
+    <div class="col-lg-12 col-md-12 wow animate__animated animate__backInDown">
+        <h1 class="text-center mt-4">Featured</h1>
+    </div>
+    <div class="row mt-4 align-items-center" >
+
+        <div class="col-lg-4 mb-4 wow animate__animated animate__zoomIn">
+            <div class="card">
+                <div class="card-body">
+                    <img src="~/App_File/Image/agri.jpg" class="img-fluid" />
+                    <h4 class="card-title text-center pt-4" style="font-family: 'Segoe UI';">Grade</h4>
+                    <details>
+                        <summary>Summary</summary>
+                        <p class="card-text">"Explore our grading system, a hallmark of academic achievement. We prioritize fair evaluation and valuable feedback for student growth. Join us in fostering a culture of learning and excellence."</p>
+                    </details>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@Url.Action("Grade","Student")" class="btn btn-primary btn-sm">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4 wow animate__animated animate__zoomIn">
+            <div class="card">
+                <div class="card-body">
+                    <img src="~/App_File/Image/image1.jpg" class="img-fluid" />
+                    <h4 class="card-title text-center pt-4" style="font-family: 'Segoe UI';">Subject</h4>
+                    <details>
+                        <summary>Discover Our Subjects</summary>
+                        <p class="card-text">
+                            Dive into a world of learning with our wide range of subjects. We offer a diverse curriculum that covers various topics, encouraging you to think critically and creatively.
+                            Join us on a journey to explore different fields of knowledge and uncover the subjects that shape our understanding of the world around us.
+                        </p>
+                    </details>
+
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary btn-sm" id="sampleView">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4 wow animate__animated animate__zoomIn">
+            <div class="card">
+                <div class="card-body">
+                    <img src="~/App_File/Image/logo.png" class="img-fluid"/>
+                    <h4 class="card-title text-center pt-4" style="font-family: 'Segoe UI';">Mission &Vission</h4>
+                    <details>
+                        <summary>Explore</summary>
+                        <p class="card-text">"Tap the 'View' button to explore the mission and vision of Romblon State University."</p>
+                    </details>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary btn-sm" id="viewBtn">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>

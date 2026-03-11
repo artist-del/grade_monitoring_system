@@ -1,0 +1,180 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+          rel="stylesheet" />
+    <link href="~/Content/facultyLogin.css" rel="stylesheet" />
+    <title>Register</title>
+</head>
+<body>
+    <style>
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -80px;
+        }
+
+            .loading-wrapper img {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 10px;
+            }
+
+        button {
+            background-color: #24b930 !important;
+        }
+    </style>
+
+    <!---Loading-->
+    <div class="loading-container">
+        <div class="loading-wrapper">
+            <img src="~/App_File/Image/gear.gif" />
+            <i style="margin: -30px;">Please wait while we setting up for you. . .</i>
+        </div>
+    </div>
+    <!--Loading Screen Modal-->
+    <div class="modal fade" tabindex="1" id="loadingScreen">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="~/App_File/Image/gear.gif" class="text-center" />
+                    <i class="text-center">Please wait ...</i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    @*<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                        class="img-fluid" alt="Sample image">*@
+                    <img src="~/App_File/Image/facultyLogo.png" class="img-fluid" />
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mt-4">
+                    <form method="post" id="facultyRegisterForm">
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <p class="lead fw-normal mb-0 me-3">Register with</p>
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                        </div>
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                        </div>
+                        <div class="alert alert-success mb-3" style="display: none;" id="alertSuccess">Successfully Registered!</div>
+                        <div class="alert alert-danger mb-3" style="display: none;" id="alertError">Username already registered!</div>
+                        <!--firstName input-->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="fName" class="form-control form-control-lg" placeholder="Enter First Name" name="first_name" />
+                            <label class="form-label" for="fName">First Name</label>
+                        </div>
+
+                        <!--middleName input-->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="mName" class="form-control form-control-lg" placeholder="Enter Middle Name" name="middle_name" />
+                            <label class="form-label" for="mName">Middle Name</label>
+                        </div>
+
+                        <!--lastname-->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="lName" class="form-control form-control-lg" name="last_name" placeholder="Enter Last Name" />
+                            <label class="form-label" for="lName">Last Name</label>
+                        </div>
+
+                        <!-- Username input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="fUser" class="form-control form-control-lg"
+                                   placeholder="Enter a valid username" name="faculty_username"/>
+                            <label class="form-label" for="fUser">Username</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <input type="password" id="fPass" class="form-control form-control-lg"
+                                   placeholder="Enter password" name="faculty_password"/>
+                            <label class="form-label" for="fPass">Password</label>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                <label class="form-check-label" for="form2Example3">
+                                    Remember me
+                                </label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="button" class="btn btn-primary btn-lg"
+                                    style="padding-left: 2.5rem; padding-right: 2.5rem;" id="btnRegister">
+                                Register
+                            </button>
+                            <p class="small fw-bold mt-2 pt-1 mb-4">
+                                Already have an account? <a href="@Url.Action("Login","Faculty")"
+                                                          class="link-danger">Sign in</a>
+                            </p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+    <script src="~/Scripts/facultyRegister.js"></script>
+    <script>
+        loadingScreen();
+        function loadingScreen() {
+            window.addEventListener('load', () => {
+                document.querySelector('.loading-container').style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,237 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|c:\\users\\acer\\documents\\artz\\grade monitoring\\grade monitoring\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|c:\\users\\acer\\documents\\artz\\grade monitoring\\grade monitoring\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\dataaccesslayer\\dlsubjectaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\dataaccesslayer\\dlsubjectaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\views\\student\\subject.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\views\\student\\subject.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\dataaccesslayer\\dlfacultyaccesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\dataaccesslayer\\dlfacultyaccesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\servicelayer\\facultyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\servicelayer\\facultyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\businesslayer\\studentbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\businesslayer\\studentbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\businesslayer\\facultybusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\businesslayer\\facultybusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\grade monitoring\\businesslayer\\ifacultybusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3F64BB-2C09-40DA-9D6F-2A7036745DE5}|Grade Monitoring\\Grade Monitoring.csproj|solutionrelative:grade monitoring\\businesslayer\\ifacultybusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "Grade Monitoring\\Views\\Student\\Index.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAC8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-08-22T13:11:42.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Grade Monitoring\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwDMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T11:44:46.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DLSubjectAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\DataAccessLayer\\DLSubjectAccess.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\DataAccessLayer\\DLSubjectAccess.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\DataAccessLayer\\DLSubjectAccess.cs",
+              "RelativeToolTip": "Grade Monitoring\\DataAccessLayer\\DLSubjectAccess.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCIAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T15:03:03.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StudentBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\StudentBusiness.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\BusinessLayer\\StudentBusiness.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\StudentBusiness.cs",
+              "RelativeToolTip": "Grade Monitoring\\BusinessLayer\\StudentBusiness.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:31:59.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Web.config",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Web.config",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Web.config",
+              "RelativeToolTip": "Grade Monitoring\\Web.config",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-18T10:15:02.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Subject.cshtml",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Views\\Student\\Subject.cshtml",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Views\\Student\\Subject.cshtml",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Views\\Student\\Subject.cshtml",
+              "RelativeToolTip": "Grade Monitoring\\Views\\Student\\Subject.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-08-22T14:03:22.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DLFacultyAccessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\DataAccessLayer\\DLFacultyAccessLayer.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\DataAccessLayer\\DLFacultyAccessLayer.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\DataAccessLayer\\DLFacultyAccessLayer.cs",
+              "RelativeToolTip": "Grade Monitoring\\DataAccessLayer\\DLFacultyAccessLayer.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAkwD0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:14:13.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FacultyController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\FacultyController.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Controllers\\FacultyController.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\FacultyController.cs",
+              "RelativeToolTip": "Grade Monitoring\\Controllers\\FacultyController.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAiwGAAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:15:08.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FacultyService.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\ServiceLayer\\FacultyService.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\ServiceLayer\\FacultyService.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\ServiceLayer\\FacultyService.cs",
+              "RelativeToolTip": "Grade Monitoring\\ServiceLayer\\FacultyService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:15:03.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Grade Monitoring\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAwDgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T10:45:24.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FacultyBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\FacultyBusinessLayer.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\BusinessLayer\\FacultyBusinessLayer.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\FacultyBusinessLayer.cs",
+              "RelativeToolTip": "Grade Monitoring\\BusinessLayer\\FacultyBusinessLayer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwBMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:15:00.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IFacultyBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\IFacultyBusinessLayer.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\BusinessLayer\\IFacultyBusinessLayer.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\BusinessLayer\\IFacultyBusinessLayer.cs",
+              "RelativeToolTip": "Grade Monitoring\\BusinessLayer\\IFacultyBusinessLayer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T11:14:50.562Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubjectController.cs",
+              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\SubjectController.cs",
+              "RelativeDocumentMoniker": "Grade Monitoring\\Controllers\\SubjectController.cs",
+              "ToolTip": "C:\\Users\\Acer\\Documents\\artz\\Grade Monitoring\\Grade Monitoring\\Controllers\\SubjectController.cs",
+              "RelativeToolTip": "Grade Monitoring\\Controllers\\SubjectController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAxwCUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T09:29:54.398Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

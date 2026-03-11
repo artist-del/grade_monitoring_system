@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Subject";
+    Layout = "~/Views/Shared/_FacultyLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex">
+        <h6 class="m-0 font-weight-bold text-primary" id="showModalForAddSubject" style="cursor:pointer;"><i class="fas fa-plus-circle"></i> Add Subject</h6>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTableSubject" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th colspan="5" class="text-center">
+                                    <select class="form-control w-25" id="perSem">
+                                        <option value="First Semister">First Semister</option>
+                                        <option value="Second Semister">Second Semister</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Year Level</th>
+                                <th>Unit</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Year Level</th>
+                                <th>Unit</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="1" id="addSubject">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#addSubject').modal('hide')">&times;</button>
+                <div id="modalHeadingSubject">
+
+                </div>
+                <div class="card-body" id="contentBody">
+                    <form method='post' id='formForSubject'>
+                        <input type="hidden" name="id" id="subjectId" />
+                        <label>Subject Code</label>
+                        <input type="text" placeholder="Enter Subject Code" class="form-control mb-3" name="subject_code" id="subjectCode" />
+
+                        <label>Subject Name</label>
+                        <input type="text" placeholder="Enter Subject Name" class="form-control mb-3" name="subject_name" id="subjectName" />
+
+                        <label>Year Level</label>
+                        <select class="form-control mb-3" id="year_level" name="year_level">
+                            <option value="First Year">First Year</option>
+                            <option value="Second Year">Second Year</option>
+                            <option value="Third Year">Third Year</option>
+                            <option value="Fourth Year">Fourth Year</option>
+                        </select>
+
+                        <label>Unit no.</label>
+                        <input type="text" placeholder="Enter Subject Unit" class="form-control mb-3" name="subject_unit" id="subjectUnit" />
+
+                        <label>Semister</label>
+                        <select class="form-control mb-3" id="subjectSem" name="per_sem">
+                            <option value="">--Select Subject Semister--</option>
+                            <option value="First Semister">First Semister</option>
+                            <option value="Second Semister">Second Semister</option>
+                        </select>
+
+                        <button class="btn btn-primary" id="btnSubjectSave" type="button">Save</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <div id="loadingSaveForSubject" style="display: none;">
+                            <img src="~/App_File/Image/gear.gif" height="50" width="50" class="text-center" />
+                            <i>Please wait...</i>
+                        </div>
+                        <div class="alert alert-info" id="saveAlertForSubject" style="display: none;">Successfull Save!</div>
+                        <div class="alert alert-danger" id="errorAlertForSubject" style="display: none;">Something Wrong!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!---confirm modal for delete-->
+<div class="modal fade" id="confirmedModalSubject">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#confirmedModalSubject').modal('hide')">&times;</button>
+
+                <h2 class="text-center" id="removeMsg">Do you want to remove?</h2>
+                <h2 class="text-center" id="removeCheck" style="display: none;">Successfully Deleted!</h2>
+                <input type="hidden" id="removeSubjectId" />
+                <div class="text-center" id="removeLoadingScreen" style="display: none;">
+                    <img src="~/App_File/Image/gear.gif" />
+                    <i>Please wait...</i>
+                </div>
+                <div class="text-center" id="removeCheckLogo" style="display: none;">
+                    <img src="~/App_File/Image/check.png" height="157" width="157" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" id="btnRemoveSubject">Yes</button>
+                <button class="btn btn-info btn-sm" onclick="$('#confirmedModalSubject').modal('hide')">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

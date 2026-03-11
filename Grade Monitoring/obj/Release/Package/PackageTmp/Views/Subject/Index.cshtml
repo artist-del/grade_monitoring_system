@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Grade_Monitoring.Models.student_subject>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            <input type="text" id="smsMessage" />
+
+            <button type="button" id="btnSend">Send</button>
+        </form>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $('#btnSend').click(() => {
+            let msg = $('#smsMessage').val();
+            
+            $.ajax({
+                url: '/Subject/SendSms',
+                type: 'post',
+                data: {message: msg},
+                success: (e) => {
+                    if (e.result) {
+                        console.log("Message Sent");
+                    }
+                    else {
+                        console.log("Error");
+                    }
+                }
+                
+                });
+        })
+    </script>
+
+    <table>
+        <thead>
+            <tr>
+                <th>subject code</th>
+                <th>subject name</th>
+                <th>year level</th>
+                <th>subject unit</th>
+                <th>per sem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.subject_code</td>
+                    <td>@item.subject_name</td>
+                    <td>@item.year_level</td>
+                    <td>@item.subject_unit</td>
+                    <td>@item.per_sem</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

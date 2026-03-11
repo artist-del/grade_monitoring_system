@@ -1,0 +1,285 @@
+﻿
+@{
+    ViewBag.Title = "StudentInfo";
+    Layout = "~/Views/Shared/_FacultyLayout.cshtml";
+}
+
+<!-- Page Heading -->
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex">
+        <h6 class="m-0 font-weight-bold text-primary" id="showModalForAddInfo" style="cursor:pointer;"><i class="fas fa-plus-circle"></i> Add Student</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="6" class="text-center">Romblon State University Cajidiocan Campus Student List</th>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Year Level</th>
+                        <th>Block</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Year Level</th>
+                        <th>Block</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody id="dataStudentInfo">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="1" id="addStudent">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#addStudent').modal('hide')">&times;</button>
+                <div id="modalHeadingContent">
+
+                </div>
+                <div class="card-body" id="contentBody">
+                    <form method='post' id='formForAddStudent'>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="hidden" name="id" id="studId" class=""/>
+                                <label>First Name</label>
+                                <input type="text" placeholder="First Name" class="form-control mb-3" name="first_name" id="firstName" />
+
+                                <label>Middle Name</label>
+                                <input type="text" placeholder="Middle Name" class="form-control mb-3" name="middle_name" id="middleName" />
+
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Last Name" class="form-control mb-3" name="last_name" id="lastName" />
+
+                                <label>Address</label>
+                                <input type="text" placeholder="Address" class="form-control mb-3" name="location" id="formLocation" />
+
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Email Address" class="form-control mb-3" name="email_address" id="formEmailAdd" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Phone Number</label>
+                                <input type="text" placeholder="Phone no." class="form-control mb-3" maxlength="15" name="phone_number" id="formNumber" />
+
+                                <label>Block</label>
+                                <input type="text" placeholder="Block-A" class="form-control mb-3" name="student_block" id="formBlock" value="Block-A"/>
+
+                                <label>Year Level</label>
+                                <select class="form-control mb-3" name="year_lvl" id="yearLvl">
+                                    <option value="">--Select Year--</option>
+                                    <option value="First Year">First Year</option>
+                                    <option value="Second Year">Second Year</option>
+                                    <option value="Third Year">Third Year</option>
+                                    <option value="Fourth Year">Fourth Year</option>
+                                </select>
+
+                                <label>Username</label>
+                                <input type="text" placeholder="Username" class="form-control mb-3" name="stud_username" id="formUsername" />
+
+                                <label id="labelForPassword">Password</label>
+                                <input type="password" placeholder="Password" class="form-control mb-3" name="stud_password" id="formPassword" />
+                                <button type="button" class="btn btn-primary" onclick="btnSaveNewStudent();" id="btnSaveStudent">Save</button>
+                                <button type="button" class="btn btn-primary" onclick="btnUpdateNewStudent();" id="btnUpdateStudent">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <div id="loadingSaveForStudent" style="display: none;">
+                            <img src="~/App_File/Image/gear.gif" height="50" width="50" class="text-center" />
+                            <i>Please wait...</i>
+                        </div>
+                        <div class="alert alert-info" id="saveAlertForStudent" style="display: none;">Successfull Save!</div>
+                        <div class="alert alert-danger" id="errorAlertForStudent" style="display: none;">Username already exist!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!---confirm modal-->
+<div class="modal fade" id="confirmedModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#confirmedModal').modal('hide')">&times;</button>
+
+                <h2 class="text-center" id="removeMsg">Do you want to remove?</h2>
+                <h2 class="text-center" id="removeCheck" style="display: none;">Successfully Deleted!</h2>
+                <input type="hidden" id="removeId" />
+                <div class="text-center" id="removeLoadingScreen" style="display: none;">
+                    <img src="~/App_File/Image/gear.gif" />
+                    <i>Please wait...</i>
+                </div>
+                <div class="text-center" id="removeCheckLogo" style="display: none;">
+                    <img src="~/App_File/Image/check.png" height="157" width="157" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" id="btnRemoveStudent">Yes</button>
+                <button class="btn btn-info btn-sm" onclick="$('#confirmedModal').modal('hide')">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for adding student grade-->
+<div class="modal fade" id="studentInformationForm">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#studentInformationForm').modal('hide')">&times;</button>
+
+                <div class="card-body" style="border: #090b68 1px solid;">
+                    <h5 class="text-center" style="background-color: #090b68; padding: 5px; color: white;"><b>Student Information and Subject Enrolled</b></h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0" id="dataTableForStudentSubjectList">
+                            <thead>
+                                <tr>
+                                    <th colspan="5" id="fullName"></th>
+                                </tr>
+                                <tr>
+                                    <th colspan="3" id="yrLvl"></th>
+                                    <th colspan="2" id="block"></th>
+                                </tr>
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>Year Level</th>
+                                    <th>Unit</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--subject table-->
+                <div class="card-body mt-4" style="border: #090b68 1px solid;">
+                    <h5 class="text-center" style="background-color: #090b68; padding: 5px; color: white;"><b>Subject List</b></h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTableStudentSubject" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="5" class="text-center">
+                                        <select class="form-control w-25" id="perSem">
+                                            <option value="First Semister">First Semister</option>
+                                            <option value="Second Semister">Second Semister</option>
+                                        </select>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>Year Level</th>
+                                    <th>Unit</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--modal for grade-->
+<div class="modal fade" id="addGradeModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body" style="border: #090b68 1px solid;">
+                    <h5 class="text-center mb-4" style="background-color: #090b68; padding: 5px; color: white;"><b>Add Grade</b></h5>
+                    <input type="hidden" class="form-control mb-3" id="studentId" />
+                    <input type="hidden" class="form-control" id="subjectId" />
+
+                    <label for="studentFullName">Student Full Name</label>
+                    <input type="text" class="form-control mb-3" id="studentFullName" readonly/>
+
+                    <label for="subjectName">Subject Name</label>
+                    <input type="text" class="form-control" id="subjectName" readonly/>
+
+                    <label for="firstSem">Mid</label>
+                    <input type="number" class="form-control mb-3" id="firstSem" placeholder="Enter Grade for First Semister"/>
+
+                    <label for="secondSem">Final</label>
+                    <input type="number" class="form-control mb-3" id="secondSem" placeholder="Enter Grade for Second Semister"/>
+
+                    <label for="finalResult">Final Result</label>
+                    <input type="number" class="form-control mb-3" id="finalResult" placeholder="Enter Grade for Final Result" readonly/>
+
+                    <button class="btn btn-primary btn-sm mt-4" id="btnBack">Back</button>
+                    <button class="btn btn-warning btn-sm mt-4" id="btnSaveGrade">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="viewStudentGradeInfo">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body" style="border: #090b68 1px solid;">
+                    <h5 class="text-center mb-4" style="background-color: #090b68; padding: 5px; color: white;"><b>Student Grade Information</b></h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="viewStudentGradeReport" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="6" class="text-center" style="color: #000000;">Romblon State University Cajidiocan Campus</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">Full Name: <b id="viewStudentFullName" style="color: #000000;"></b></th>
+                                    <th colspan="3">Date: <b id="viewDate" style="color: #000000;"></b></th>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">Year Level: <b id="viewStudentYearLvl" style="color: #000000;"></b></th>
+                                    <th colspan="3">Block/Section: <b id="viewStudentBlock" style="color: #000000;"></b></th>
+                                </tr>
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>First Sem</th>
+                                    <th>Second Sem</th>
+                                    <th>Final Result</th>
+                                    <th>Remark</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" id="viewBtnBack">Close</button>
+                <button class="btn btn-primary btn-sm" id="viewPrintButton">Print</button>
+            </div>
+        </div>
+    </div>
+</div>

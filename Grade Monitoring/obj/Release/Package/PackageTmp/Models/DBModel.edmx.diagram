@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="212044b2476f489e939377b6d49c2f04" Name="Diagram1">
+        <EntityTypeShape EntityType="grade_monitoringModel.course_info" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.faculty_subject" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.faculty_table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.student_block" Width="1.5" PointX="5.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.student_info" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.student_subject" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.tbl_Admin" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="grade_monitoringModel.tbl_student_subject" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="grade_monitoringModel.FK__faculty_s__facul__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="grade_monitoringModel.FK__faculty_s__subje__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="grade_monitoringModel.FK__tbl_stude__stude__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="grade_monitoringModel.FK__tbl_stude__subje__3D2915A8" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="grade_monitoringModel.tbl_student_grade" Width="1.5" PointX="3" PointY="10.75" />
+        <AssociationConnector Association="grade_monitoringModel.FK__tbl_stude__stude__4F47C5E3" />
+        <AssociationConnector Association="grade_monitoringModel.FK__tbl_stude__subje__503BEA1C" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

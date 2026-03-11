@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "FacultyList";
+    Layout = "~/Views/Shared/_FacultyLayout.cshtml";
+}
+
+<h2>FacultyList</h2>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex">
+        <h6 class="m-0 font-weight-bold text-primary" id="showModalForAddFaculty" style="cursor:pointer;"><i class="fas fa-plus-circle"></i> Add Faculty</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="facultyTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="6" class="text-center">Romblon State University Cajidiocan Campus Faculty List</th>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--modal for add faculty-->
+<div class="modal fade" tabindex="1" id="addFaculty">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#addFaculty').modal('hide')">&times;</button>
+                <div id="modalHeadingContentFaculty">
+
+                </div>
+                <div class="card-body" id="contentBody">
+                    <form method='post' id='formForAddFaculty'>
+             
+                                <input type="hidden" name="id" id="facultyId" class="" />
+                                <label>First Name</label>
+                                <input type="text" placeholder="First Name" class="form-control mb-3" name="first_name" id="facultyFName" />
+
+                                <label>Middle Name</label>
+                                <input type="text" placeholder="Middle Name" class="form-control mb-3" name="middle_name" id="facultyMName" />
+
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Last Name" class="form-control mb-3" name="last_name" id="facultyLName" />
+                        
+                                <label>Username</label>
+                                <input type="text" placeholder="Username" class="form-control mb-3" name="faculty_username" id="facultyUsername" />
+
+                                <label id="labelForPassword">Password</label>
+                                <input type="password" placeholder="Password" class="form-control mb-3" name="faculty_password" id="facultyPassword" />
+
+                                <button type="button" class="btn btn-primary" id="btnSaveFaculty">Save</button>
+                                <button type="button" class="btn btn-primary" id="btnUpdateFaculty">Update</button>
+                  
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <div id="loadingSaveForFaculty" style="display: none;">
+                            <img src="~/App_File/Image/gear.gif" height="50" width="50" class="text-center" />
+                            <i>Please wait...</i>
+                        </div>
+                        <div class="alert alert-info" id="saveAlertForFaculty" style="display: none;">Successfull Save!</div>
+                        <div class="alert alert-danger" id="errorAlertForFaculty" style="display: none;">Username already exist!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--confirmation modal-->
+<div class="modal fade" id="confirmedModalFaculty">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close" onclick="$('#confirmedModalFaculty').modal('hide')">&times;</button>
+
+                <h2 class="text-center" id="removeMsgFaculty">Do you want to remove?</h2>
+                <h2 class="text-center" id="removeCheckFaculty" style="display: none;">Successfully Deleted!</h2>
+                <input type="hidden" id="removeFacultyId" />
+                <div class="text-center" id="removeLoadingScreenFaculty" style="display: none;">
+                    <img src="~/App_File/Image/gear.gif" />
+                    <i>Please wait...</i>
+                </div>
+                <div class="text-center" id="removeCheckLogoFaculty" style="display: none;">
+                    <img src="~/App_File/Image/check.png" height="157" width="157" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" id="btnRemoveFaculty">Yes</button>
+                <button class="btn btn-info btn-sm" onclick="$('#confirmedModalFaculty').modal('hide')">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

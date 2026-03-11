@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="grade_monitoringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="course_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="course_description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="faculty_subject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="faculty_id" Type="int" />
+    <Property Name="subject_id" Type="int" />
+  </EntityType>
+  <EntityType Name="faculty_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="middle_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="faculty_username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="faculty_password" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_block">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stud_block_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="year_lvl" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="middle_name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="email_address" Type="varchar" MaxLength="250" />
+    <Property Name="phone_number" Type="varchar" MaxLength="11" />
+    <Property Name="student_block" Type="varchar" MaxLength="150" />
+    <Property Name="stud_username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="stud_password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="year_lvl" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="student_subject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subject_code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="subject_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="year_level" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="subject_unit" Type="int" Nullable="false" />
+    <Property Name="per_sem" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="admin_username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="admin_password" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_student_grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_id" Type="int" />
+    <Property Name="subject_id" Type="int" />
+    <Property Name="first_sem" Type="decimal" Precision="3" Scale="2" />
+    <Property Name="second_sem" Type="decimal" Precision="3" Scale="2" />
+    <Property Name="final_result" Type="decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_student_subject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_id" Type="int" />
+    <Property Name="subject_id" Type="int" />
+  </EntityType>
+  <Association Name="FK__faculty_s__facul__2A4B4B5E">
+    <End Role="faculty_table" Type="Self.faculty_table" Multiplicity="0..1" />
+    <End Role="faculty_subject" Type="Self.faculty_subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="faculty_table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="faculty_subject">
+        <PropertyRef Name="faculty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__faculty_s__subje__2B3F6F97">
+    <End Role="student_subject" Type="Self.student_subject" Multiplicity="0..1" />
+    <End Role="faculty_subject" Type="Self.faculty_subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_subject">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="faculty_subject">
+        <PropertyRef Name="subject_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_stude__stude__3C34F16F">
+    <End Role="student_info" Type="Self.student_info" Multiplicity="0..1" />
+    <End Role="tbl_student_subject" Type="Self.tbl_student_subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_student_subject">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_stude__stude__4F47C5E3">
+    <End Role="student_info" Type="Self.student_info" Multiplicity="0..1" />
+    <End Role="tbl_student_grade" Type="Self.tbl_student_grade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_student_grade">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_stude__subje__3D2915A8">
+    <End Role="student_subject" Type="Self.student_subject" Multiplicity="0..1" />
+    <End Role="tbl_student_subject" Type="Self.tbl_student_subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_subject">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_student_subject">
+        <PropertyRef Name="subject_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_stude__subje__503BEA1C">
+    <End Role="student_subject" Type="Self.student_subject" Multiplicity="0..1" />
+    <End Role="tbl_student_grade" Type="Self.tbl_student_grade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_subject">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_student_grade">
+        <PropertyRef Name="subject_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="grade_monitoringModelStoreContainer">
+    <EntitySet Name="course_info" EntityType="Self.course_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="faculty_subject" EntityType="Self.faculty_subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="faculty_table" EntityType="Self.faculty_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_block" EntityType="Self.student_block" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_info" EntityType="Self.student_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_subject" EntityType="Self.student_subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_student_grade" EntityType="Self.tbl_student_grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_student_subject" EntityType="Self.tbl_student_subject" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__faculty_s__facul__2A4B4B5E" Association="Self.FK__faculty_s__facul__2A4B4B5E">
+      <End Role="faculty_table" EntitySet="faculty_table" />
+      <End Role="faculty_subject" EntitySet="faculty_subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK__faculty_s__subje__2B3F6F97" Association="Self.FK__faculty_s__subje__2B3F6F97">
+      <End Role="student_subject" EntitySet="student_subject" />
+      <End Role="faculty_subject" EntitySet="faculty_subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_stude__stude__3C34F16F" Association="Self.FK__tbl_stude__stude__3C34F16F">
+      <End Role="student_info" EntitySet="student_info" />
+      <End Role="tbl_student_subject" EntitySet="tbl_student_subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_stude__stude__4F47C5E3" Association="Self.FK__tbl_stude__stude__4F47C5E3">
+      <End Role="student_info" EntitySet="student_info" />
+      <End Role="tbl_student_grade" EntitySet="tbl_student_grade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_stude__subje__3D2915A8" Association="Self.FK__tbl_stude__subje__3D2915A8">
+      <End Role="student_subject" EntitySet="student_subject" />
+      <End Role="tbl_student_subject" EntitySet="tbl_student_subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_stude__subje__503BEA1C" Association="Self.FK__tbl_stude__subje__503BEA1C">
+      <End Role="student_subject" EntitySet="student_subject" />
+      <End Role="tbl_student_grade" EntitySet="tbl_student_grade" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

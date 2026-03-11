@@ -1,0 +1,66 @@
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\ApplicationInsights.config
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\csc.exe
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\vbc.exe
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\VBCSCompiler.exe
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Grade Monitoring.dll.config
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Grade Monitoring.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Grade Monitoring.pdb
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Antlr3.Runtime.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\EntityFramework.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\EntityFramework.SqlServer.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.Web.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.ApplicationInsights.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Newtonsoft.Json.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Helpers.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Mvc.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Optimization.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Razor.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.Razor.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Twilio.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\WebGrease.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\EntityFramework.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\EntityFramework.SqlServer.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.Web.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.ApplicationInsights.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Newtonsoft.Json.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Helpers.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Mvc.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Optimization.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.Razor.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\System.Web.WebPages.Razor.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Twilio.xml
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\bin\Antlr3.Runtime.pdb
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\obj\Release\Grade Monitoring.csproj.AssemblyReference.cache
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\obj\Release\Grade Monitoring.csproj.CoreCompileInputs.cache
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\obj\Release\Grade Monitoring.csproj.CopyComplete
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\obj\Release\Grade Monitoring.dll
+C:\Users\mgi-kinit\OneDrive\Documents\artz\Grade Monitoring\Grade Monitoring\obj\Release\Grade Monitoring.pdb

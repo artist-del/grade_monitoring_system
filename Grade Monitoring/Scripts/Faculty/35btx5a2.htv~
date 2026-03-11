@@ -1,0 +1,235 @@
+﻿let studentList = (yr_lvl, block) => {
+    let url = '/Student/showStudentList';
+    let table = $('#dataTable').DataTable();
+
+    table.clear().draw();
+
+    $.ajax({
+        url: url,
+        type: 'get',
+        data: {yr_lvl, block},
+        contentType: 'json',
+        success: (e) => {
+
+            e.list.map((item) => {
+
+                table.row.add([item.last_name,
+                               item.first_name,
+                               item.middle_name,
+                               item.year_lvl,
+                               item.student_block,
+                               `<button class="btn btn-primary btn-sm" onclick="getStudentId(${item.id},'${item.first_name}', '${item.middle_name}', '${item.last_name}', '${item.location}', '${item.email_address}', '${item.phone_number}', '${item.student_block}', '${item.stud_username}', '${item.year_lvl}')" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Student Info"><i class="fas fa-pen fa-sm"></i></button> <button class="btn btn-info btn-sm" onclick="informationForm(${item.id}, '${item.first_name}')"><i class="fas fa-folder-open" data-bs-toggle="tooltip" data-bs-placement="top" title="View Student Info"></i></button> <button class="btn btn-danger btn-sm" onclick="removeStudent(${item.id})" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove Student"><i class="fas fa-trash"></i></button>`
+                ]).draw();
+            })
+        }
+    })
+}
+
+studentList("","");
+
+//check if valid email
+function isValidEmail(email) {
+    // Regular expression for a basic email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+//showModal with add
+$('#showModalForAddInfo').click(() => {
+
+    $('#modalHeadingContent').html(`<h4 class="text-center">Add New Student</h4>`);
+
+    $('#addStudent').modal('show');
+
+    document.getElementById('saveAlertForStudent').style.display = 'none';
+    document.getElementById('formPassword').style.display = 'block';
+
+    document.getElementById('btnUpdateStudent').style.display = 'none';
+    document.getElementById('btnSaveStudent').style.display = 'block';
+
+    $('#firstName').val('');
+    $('#middleName').val('');
+    $('#lastName').val('');
+    $('#formLocation').val('');
+    $('#formEmailAdd').val('');
+    $('#formNumber').val('');
+    $('#formBlock').val('');
+    $('#formUsername').val('');
+    $('#yearLvl').val('');
+    $('#formPassword').val('');
+})
+
+function btnSaveNewStudent() {
+
+    let fName = $('#firstName').val();
+    let mName = $('#middleName').val();
+    let lName = $('#lastName').val();
+    let location = $('#formLocation').val();
+    let email = $('#formEmailAdd').val();
+    let number = $('#formNumber').val();
+    let block = $('#formBlock').val();
+    let user = $('#formUsername').val();
+    let pass = $('#formPassword').val();
+
+    if (fName === '') {
+        $('#firstName').focus();
+    }
+    else if (mName === '') {
+        $('#middleName').focus();
+    }
+    else if (lName === '') {
+        $('#lastName').focus();
+    }
+    else if (location === '') {
+        $('#formLocation').focus();
+    }
+    else if (!isValidEmail(email)) {
+        $('#formEmailAdd').focus();
+    }
+    else if (email === '') {
+        $('#formEmailAdd').focus();
+    }
+    else if (number === '') {
+        $('#formNumber').focus();
+    }
+    else if (block === '') {
+        $('#formBlock').focus();
+    }
+    else if (user === '') {
+        $('#formUsername').focus();
+    }
+    else if (pass === '') {
+        $('#formPassword').focus();
+    }
+    else {
+        document.getElementById('saveAlertForStudent').style.display = 'none';
+        document.getElementById('loadingSaveForStudent').style.display = 'block';
+
+        let data = $('#formForAddStudent').serialize();
+        $.ajax({
+            url: '/Student/InsertStudentInfo',
+            type: 'post',
+            data: data,
+            success: (e) => {
+                if (e.result) {
+                    document.getElementById('loadingSaveForStudent').style.display = 'none';
+                    document.getElementById('saveAlertForStudent').style.display = 'block';
+                    studentList("","");
+                    $('#firstName').val('');
+                    $('#middleName').val('');
+                    $('#lastName').val('');
+                    $('#formLocation').val('');
+                    $('#formEmailAdd').val('');
+                    $('#formNumber').val('');
+                    $('#formBlock').val('');
+                    $('#formUsername').val('');
+                    $('#yearLvl').val('');
+                    $('#formPassword').val('');
+                }
+                else {
+                    document.getElementById('loadingSaveForStudent').style.display = 'none';
+                    document.getElementById('errorAlertForStudent').style.display = 'block';
+                    console.log('Username already exist');
+                }
+            }
+        })
+    }
+}
+
+//getStudentIdForUpdate
+function getStudentId(id, firstName, middleName, lastName, location, emailAdd, phoneNum, studBlock, studUser, yrLvl) {
+
+    $('#modalHeadingContent').html(`<h4 class="text-center">Update Student</h4>`);
+
+    $('#addStudent').modal('show');
+
+    document.getElementById('saveAlertForStudent').style.display = 'none';
+    document.getElementById('formPassword').style.display = 'none';
+    document.getElementById('btnUpdateStudent').style.display = 'block';
+    document.getElementById('btnSaveStudent').style.display = 'none';
+
+    $('#studId').val(id);
+    $('#firstName').val(firstName);
+    $('#middleName').val(middleName);
+    $('#lastName').val(lastName);
+    $('#formLocation').val(location);
+    $('#formEmailAdd').val(emailAdd);
+    $('#formNumber').val(phoneNum);
+    $('#formBlock').val(studBlock);
+    $('#formUsername').val(studUser);
+    $('#yearLvl').val(yrLvl);
+}
+
+function btnUpdateNewStudent() {
+
+    document.getElementById('loadingSaveForStudent').style.display = 'block';
+    document.getElementById('saveAlertForStudent').style.display = 'none';
+
+    let url = '/Student/UpdateStudentInfo';
+    let data = $('#formForAddStudent').serialize();
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: data,
+        success: (e) => {
+            if (e.result) {
+                document.getElementById('loadingSaveForStudent').style.display = 'none';
+                document.getElementById('saveAlertForStudent').style.display = 'block';
+                studentList("","");
+                $('#firstName').val('');
+                $('#middleName').val('');
+                $('#lastName').val('');
+                $('#formLocation').val('');
+                $('#formEmailAdd').val('');
+                $('#formNumber').val('');
+                $('#formBlock').val('');
+                $('#formUsername').val('');
+                $('#yearLvl').val('');
+            }
+        }
+    })
+}
+
+
+
+//remove Student
+let removeStudent = (id) => {
+    $('#confirmedModal').modal('show');
+    $('#removeId').val(id);
+
+    document.getElementById('removeMsg').style.display = 'block';
+    document.getElementById('removeLoadingScreen').style.display = 'none';
+    document.getElementById('removeCheck').style.display = 'none';
+    document.getElementById('removeCheckLogo').style.display = 'none';
+    document.getElementById('btnRemoveStudent').style.display = 'block';
+}
+
+//for student removal function
+$('#btnRemoveStudent').click(() => {
+    let id = $('#removeId').val();
+    let url = '/Faculty/RemoveStudent';
+
+    document.getElementById('removeMsg').style.display = 'none';
+    document.getElementById('removeLoadingScreen').style.display = 'block';
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: { id: id },
+        success: (e) => {
+            if (e.result) {
+                document.getElementById('removeLoadingScreen').style.display = 'none';
+                document.getElementById('removeCheck').style.display = 'block';
+                document.getElementById('removeCheckLogo').style.display = 'block';
+                document.getElementById('btnRemoveStudent').style.display = 'none';
+                studentList("","");
+            }
+        }
+    })
+})
+
+//this function is for showing student information with there subject
+let informationForm = (id, fullName, yr_lvl, block) => {
+    alert(`Id: ${id} Full Name: ${fullName} Year: ${yr_lvl} Block: ${block}`);
+}
